@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ученически Стипендии - ПМС № 328</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Smooth tab transitions */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Accordion transitions */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* App-like container for desktop viewing */
+        .app-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="app-container">
+        
+        <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 rounded-b-2xl shadow-md">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-xl font-bold">Стипендии Инфо</h1>
+                    <p class="text-xs text-indigo-200">по ПМС № 328 / МРЗ: 620.20 €</p>
+                </div>
+                <div class="bg-indigo-500 p-2 rounded-full h-10 w-10 flex items-center justify-center">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-4">
+            
+            <!-- TAB 1: INFORMATION -->
+            <div id="info-tab" class="tab-content active">
+                <h2 class="text-lg font-semibold mb-4 text-gray-700">Видове стипендии</h2>
+                <p class="text-sm text-gray-500 mb-4">
+                    Учениците след завършено основно образование имат право на следните видове стипендии според Постановление № 328 на МС. Натиснете за повече информация.
+                </p>
+
+                <!-- Accordion 1 -->
+                <div class="mb-3 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-3">
+                            <div class="text-indigo-500 bg-indigo-50 p-2 rounded-lg"><i class="fa-solid fa-star"></i></div>
+                            <span class="text-left font-medium text-sm">За образователни резултати</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-4 text-sm text-gray-600 border-t border-gray-100">
+                            <p class="mb-2"><strong>Условие:</strong> Отличен успех (най-често над 5.50, но точният критерий се определя от училището).</p>
+                            <p class="mb-2"><strong>Доход:</strong> Не се изисква документ за доход. Отпуска се само въз основа на успеха.</p>
+                            <p><strong>Цел:</strong> Поощряване на ученици с високи постижения в учебния процес.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion 2 -->
+                <div class="mb-3 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-3">
+                            <div class="text-green-500 bg-green-50 p-2 rounded-lg"><i class="fa-solid fa-hands-holding-child"></i></div>
+                            <span class="text-left font-medium text-sm">Социална стипендия</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-4 text-sm text-gray-600 border-t border-gray-100">
+                            <p class="mb-2"><strong>Официално име:</strong> За подпомагане на достъпа до образование и предотвратяване на отпадането.</p>
+                            <p class="mb-2"><strong>Условие за успех:</strong> Минимален успех (обикновено над 4.50), определен от комисията в училището.</p>
+                            <p class="mb-2"><strong>Условие за доход:</strong> Месечният доход на член от семейството за предходните 6 месеца трябва да е по-нисък или равен на минималната работна заплата (<strong>620.20 евро</strong>).</p>
+                            <p>Използвайте калкулатора, за да проверите дали отговаряте на условието за доход.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion 3 -->
+                <div class="mb-3 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-3">
+                            <div class="text-purple-500 bg-purple-50 p-2 rounded-lg"><i class="fa-solid fa-heart-circle-check"></i></div>
+                            <span class="text-left font-medium text-sm">За ученици в уязвимо положение</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-4 text-sm text-gray-600 border-t border-gray-100">
+                            <p class="mb-2"><strong>Кой има право:</strong> Ученици без родители, с един родител или с трайни увреждания.</p>
+                            <p class="mb-2"><strong>Условия:</strong> Не се изисква определен успех и не се взема предвид доходът на семейството.</p>
+                            <p>Тези стипендии се изплащат и през месеците на лятната ваканция (за разлика от другите видове).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion 4 -->
+                <div class="mb-3 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-3">
+                            <div class="text-orange-500 bg-orange-50 p-2 rounded-lg"><i class="fa-solid fa-award"></i></div>
+                            <span class="text-left font-medium text-sm">Еднократни стипендии</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-4 text-sm text-gray-600 border-t border-gray-100">
+                            <p class="mb-2">Отпускат се въз основа на мотивирано предложение на класния ръководител.</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>За преодоляване на тежки социални обстоятелства (напр. заболяване, смърт в семейството).</li>
+                                <li>За постигнати високи резултати в извънучебни дейности (състезания, олимпиади на общинско, национално или международно ниво).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: CALCULATOR -->
+            <div id="calc-tab" class="tab-content">
+                <h2 class="text-lg font-semibold mb-2 text-gray-700">Калкулатор за доход</h2>
+                <p class="text-sm text-gray-500 mb-6">
+                    Пресметнете дали имате право на социална стипендия. Прагът е минималната работна заплата от <strong>620.20 евро</strong>.
+                </p>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
+                    <h3 class="text-sm font-medium text-gray-700 mb-4 border-b pb-2">Въведете общите доходи за последните 6 месеца:</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">Доходи на майката (в евро)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">€</span>
+                                <input type="number" id="income-mother" placeholder="0.00" class="w-full pl-8 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">Доходи на бащата (в евро)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">€</span>
+                                <input type="number" id="income-father" placeholder="0.00" class="w-full pl-8 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">Други доходи (пенсии, детски и др. в евро)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">€</span>
+                                <input type="number" id="income-other" placeholder="0.00" class="w-full pl-8 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs text-gray-500 mb-1 font-semibold">Брой членове на семейството</label>
+                            <input type="number" id="family-members" placeholder="Напр. 3" min="1" class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                            <p class="text-xs text-gray-400 mt-1">Включва родителите, вас и непълнолетните братя/сестри.</p>
+                        </div>
+
+                        <button onclick="calculateIncome()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl transition-colors mt-4 shadow-md active:scale-[0.98]">
+                            Пресметни дохода
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result Box (Hidden by default) -->
+                <div id="result-box" class="hidden rounded-xl p-5 shadow-sm text-center transition-all duration-300">
+                    <div id="result-icon" class="text-4xl mb-2"></div>
+                    <h3 id="result-title" class="text-lg font-bold mb-1"></h3>
+                    <p id="result-value" class="text-2xl font-black mb-2"></p>
+                    <p id="result-desc" class="text-sm"></p>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="fixed bottom-0 w-full max-w-[480px] bg-white border-t border-gray-200 flex justify-around items-center pb-safe z-50 rounded-t-2xl shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+            <button onclick="switchTab('info')" id="nav-info" class="flex-1 py-4 text-indigo-600 flex flex-col items-center gap-1 transition-colors">
+                <i class="fa-solid fa-book-open text-lg"></i>
+                <span class="text-[10px] font-semibold uppercase tracking-wider">Информация</span>
+            </button>
+            <button onclick="switchTab('calc')" id="nav-calc" class="flex-1 py-4 text-gray-400 hover:text-indigo-600 flex flex-col items-center gap-1 transition-colors">
+                <i class="fa-solid fa-calculator text-lg"></i>
+                <span class="text-[10px] font-semibold uppercase tracking-wider">Калкулатор</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <script>
+        // Constants
+        const MIN_WAGE_EUR = 620.20;
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId + '-tab').classList.add('active');
+            
+            // Update Navigation UI
+            const navInfo = document.getElementById('nav-info');
+            const navCalc = document.getElementById('nav-calc');
+            
+            if (tabId === 'info') {
+                navInfo.classList.remove('text-gray-400');
+                navInfo.classList.add('text-indigo-600');
+                navCalc.classList.remove('text-indigo-600');
+                navCalc.classList.add('text-gray-400');
+            } else {
+                navCalc.classList.remove('text-gray-400');
+                navCalc.classList.add('text-indigo-600');
+                navInfo.classList.remove('text-indigo-600');
+                navInfo.classList.add('text-gray-400');
+            }
+            
+            // Scroll to top when switching tabs
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Accordion Logic
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.style.maxHeight = null;
+                    item.previousElementSibling.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current accordion
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Calculator Logic
+        function calculateIncome() {
+            // Get inputs
+            const mother = parseFloat(document.getElementById('income-mother').value) || 0;
+            const father = parseFloat(document.getElementById('income-father').value) || 0;
+            const other = parseFloat(document.getElementById('income-other').value) || 0;
+            const members = parseInt(document.getElementById('family-members').value) || 0;
+
+            const resultBox = document.getElementById('result-box');
+            const resultIcon = document.getElementById('result-icon');
+            const resultTitle = document.getElementById('result-title');
+            const resultValue = document.getElementById('result-value');
+            const resultDesc = document.getElementById('result-desc');
+
+            // Validation
+            if (members <= 0) {
+                showCustomMessage("Грешка", "Моля, въведете валиден брой членове на семейството (поне 1).", "bg-red-50", "text-red-600", "fa-circle-exclamation");
+                return;
+            }
+
+            // Calculation
+            // Total income for 6 months
+            const totalIncome6Months = mother + father + other;
+            // Average monthly income per family member
+            const monthlyPerMember = (totalIncome6Months / 6) / members;
+
+            // Display Results
+            resultBox.classList.remove('hidden');
+            resultValue.innerText = monthlyPerMember.toFixed(2) + " €";
+
+            if (monthlyPerMember <= MIN_WAGE_EUR) {
+                // Eligible
+                resultBox.className = "rounded-xl p-5 shadow-sm text-center transition-all duration-300 bg-green-50 border border-green-200 text-green-800";
+                resultIcon.innerHTML = '<i class="fa-solid fa-check-circle text-green-500"></i>';
+                resultTitle.innerText = "Успешно!";
+                resultDesc.innerHTML = `Доходът ви е под или равен на МРЗ (620.20 €).<br><span class="font-semibold">Имате право</span> да кандидатствате за социална стипендия (ако отговаряте и на изискването за успех).`;
+            } else {
+                // Not Eligible
+                resultBox.className = "rounded-xl p-5 shadow-sm text-center transition-all duration-300 bg-red-50 border border-red-200 text-red-800";
+                resultIcon.innerHTML = '<i class="fa-solid fa-xmark-circle text-red-500"></i>';
+                resultTitle.innerText = "Надвишен праг";
+                resultDesc.innerHTML = `Доходът ви надвишава МРЗ (620.20 €).<br><span class="font-semibold">Нямате право</span> на социална стипендия, но можете да кандидатствате за стипендия за отличен успех.`;
+            }
+            
+            // Scroll down to see result
+            setTimeout(() => {
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }, 100);
+        }
+
+        // Custom Error Message visual updater (replaces alert)
+        function showCustomMessage(title, text, bgColorClass, textColorClass, iconClass) {
+            const resultBox = document.getElementById('result-box');
+            resultBox.className = `rounded-xl p-5 shadow-sm text-center transition-all duration-300 border border-opacity-50 ${bgColorClass} ${textColorClass}`;
+            document.getElementById('result-icon').innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
+            document.getElementById('result-title').innerText = title;
+            document.getElementById('result-value').innerText = "";
+            document.getElementById('result-desc').innerText = text;
+            resultBox.classList.remove('hidden');
+        }
+
+        // Add padding bottom to body for safe area on iOS
+        document.addEventListener('DOMContentLoaded', function() {
+            if (CSS.supports('padding-bottom: env(safe-area-inset-bottom)')) {
+                document.querySelector('nav').style.paddingBottom = 'env(safe-area-inset-bottom)';
+            }
+        });
+    </script>
+</body>
+</html>
